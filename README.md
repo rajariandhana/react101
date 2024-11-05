@@ -4,6 +4,7 @@ variant: TypeScript
 cd to app dir
 <code>npm install</code>
 <code>npm run dev</code>
+<code>npm install bootstrap</code>
 
 
 # React + TypeScript + Vite
