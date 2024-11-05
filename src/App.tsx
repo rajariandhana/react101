@@ -1,8 +1,23 @@
-import Message from './Message';
-import ListGroup from './components/ListGroup';
+import Message from "./Message";
+import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
+import Button from "./components/Button";
+import { useState } from "react";
 
-function App(){
-  return <div><ListGroup/><ListGroup/></div>
+function App() {
+  let items = ["Tokyo", "Osaka", "Kyoto", "Sapporo"];
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
+  const [alertVisible, setAlertVisibility] = useState(true);
+  return (
+    <div>
+      {/* <ListGroup items={items} heading="Japan Cities" onSelectItem={handleSelectItem}/> */}
+      <Button onClick={()=>setAlertVisibility(!alertVisible)} color="danger">Click me</Button>
+
+      {alertVisible && <Alert onClose={()=>setAlertVisibility(false)}>Selesaikan tugasmu nak</Alert>}
+    </div>
+  );
 }
 export default App;
 
